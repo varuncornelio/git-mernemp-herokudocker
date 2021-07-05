@@ -21,8 +21,8 @@ app.use(bodyParser.urlencoded({limit:"20mb",extended:true}));
 app.use('/patients',patientRoutes);
 
 
-const CONNECTION_URL='mongodb+srv://corneto:14q82wgYEuKco8g5@merncluster.z2fus.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-
+//const CONNECTION_URL='mongodb+srv://corneto:14q82wgYEuKco8g5@merncluster.z2fus.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const CONNECTION_URL=process.env.MONGODB_URI;
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL, {
